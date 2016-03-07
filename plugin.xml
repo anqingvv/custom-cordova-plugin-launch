@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        id="custom-cordova-plugin-launch"
+        version="0.0.1">
+    <name>LaunchActivityPlugin</name>
+    <decription>Launch the other application</decription>
+
+    <!-- Android -->
+    <platform name="android">
+        <config-file target="res/xml/config.xml" parent="/*">
+            <feature name="LaunchActivityPlugin">
+                <param name="android-package" value="com.vv.plugin.launch.LaunchActivityPlugin"/>
+            </feature>
+        </config-file>
+
+        <source-file src="src/android/LaunchActivityPlugin.java" target-dir="src/com/vv/plugin/launch" />
+
+        <js-module src="www/LaunchActivityPlugin.js" name="LaunchActivityPlugin">
+            <merges target="custom.activity" />
+        </js-module>
+    </platform>
+
+    <!-- ios -->
+    <platform name="ios">
+
+    </platform>
+
+</plugin>
